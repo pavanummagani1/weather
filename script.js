@@ -1,4 +1,4 @@
-async function getData(location='hyderabad') {
+async function getData(location='Illinois') {
     const url = `https://open-weather13.p.rapidapi.com/city/${location}/EN`;
     const options = {
         method: 'GET',
