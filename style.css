@@ -110,18 +110,28 @@ input[type='text']::placeholder{
     flex-direction: row;
     justify-content: center;
 }
-.windImageContainer>img{
-    height: 100%;
-}
 .windData>p, .humidityData>p{
     font-size: 1.5em;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 10px;
 }
 
-/* @media screen and (max-width:600px){
- 
-    
-} */
+@media screen and (max-width:620px){
+    .windImage, .humidityImage{
+        width: 100%;
+    }
+    .humidityData>p, .windData>p{
+        font-size: 1.5em;
+    }
+    .weatherContainer{
+        justify-content: space-between;
+        font-size: 1em;
+    }
+    .windData>p, .humidityData>p{
+        font-size: 1em;
+        margin-top: 10px;
+    }
+}

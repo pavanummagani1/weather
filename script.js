@@ -128,6 +128,7 @@ function printData(data) {
     windImageContainer.className = 'windImageContainer'
     let windImage = document.createElement('img');
     windImage.src = './assets/weather/wind.gif'
+    windImage.className = 'windImage'
     windImageContainer.appendChild(windImage)
 
     //windData
