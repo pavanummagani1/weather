@@ -1,15 +1,18 @@
-async function getData(location='Illinois') {
+async function getData(location='hyderabad') {
     const url = `https://open-weather13.p.rapidapi.com/city/${location}/EN`;
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': '4d9609bb6amsh362bd055ee3ef52p1793d3jsn6d7f9a32e652',
+            'x-rapidapi-key': 'ee03d2434emshb945c7e2ececb34p137225jsn8e467e44001b',
             'x-rapidapi-host': 'open-weather13.p.rapidapi.com'
         }
     };
 
     try {
         const response = await fetch(url, options);
+        if(!response.ok){
+            throw new Error('DATA FAILED TO FETCH')
+        }
         const data = await response.json();
         printData(data)
 
@@ -35,7 +38,7 @@ function printData(data) {
     inputElement.type = 'text'
     inputElement.placeholder = 'ENTER A LOCATION';
     inputElement.addEventListener('change', () => {
-        const newLocation = inputElement.value;
+        const newLocation = inputElement.value.trim();
         // console.log(newLocation)
         if (newLocation) {
             getData(newLocation); // Fetch new data for the entered location
